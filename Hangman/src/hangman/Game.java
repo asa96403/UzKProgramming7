@@ -43,18 +43,25 @@ public class Game extends JFrame {
 		inputField.setHorizontalAlignment(JTextField.CENTER);
 		inputField.setEnabled(false); // initially inactive
 		add(inputField);
+		// Button to start a new game
+				JButton sendButton = new JButton(" Enter ");
+				add(sendButton);
 		// Starts the game when button is clicked and enables restart
 		startButton.addActionListener(e -> {
 			startGame();
 			startButton.setEnabled(false);
 		});
-		// You will implement this method
-		processInput();
+		// processes the input when pressing the "Enter" button
+				sendButton.addActionListener(e -> {
+					processInput();
+				});
+		
 		setVisible(true);
 	}
 
 	// Resets game state when starting a new game
 	protected void startGame() {
+		currentWord=currentWord.trim();
 		guessedLetters.clear();
 		attemptsLeft = 6;
 		timeLeft = 60;
@@ -136,7 +143,7 @@ public class Game extends JFrame {
 		for (char character : guessedLetters) {
 			guessed.append(character);
 		}
-		return currentWord.equals(guessed.toString());
+		return hangman.util.LetterChecker.isSameLetters(currentWord, guessed.toString());
 	}
 
 	/**
