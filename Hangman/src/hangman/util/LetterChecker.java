@@ -1,7 +1,6 @@
 package hangman.util;
 
 import java.util.Arrays;
-import java.util.Scanner;
 
 /**
  * Utility class modified to check for same letters but not number of letters from earlier homework
@@ -24,8 +23,6 @@ public class LetterChecker {
 	 * ignores spaces
 	 */
 	public static int[] countLetters(String s) {
-//		char[] alphabet = {'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 
-//				'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'};
 		int[] counts = new int[26];
 		Arrays.fill(counts, 0);
 		for(int i=0; i<s.length(); i++) {
