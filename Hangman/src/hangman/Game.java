@@ -54,6 +54,7 @@ public class Game extends JFrame {
 		// processes the input when pressing the "Enter" button
 				sendButton.addActionListener(e -> {
 					processInput();
+					inputField.requestFocus();
 				});
 		
 		setVisible(true);
@@ -143,7 +144,7 @@ public class Game extends JFrame {
 		for (char character : guessedLetters) {
 			guessed.append(character);
 		}
-		return hangman.util.LetterChecker.isSameLetters(currentWord, guessed.toString());
+		return hangman.util.LetterChecker.hasAllLetters(currentWord, guessed.toString(), currentWord);
 	}
 
 	/**
