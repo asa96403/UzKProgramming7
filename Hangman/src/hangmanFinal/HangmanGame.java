@@ -3,10 +3,6 @@ package hangmanFinal;
 
 public class HangmanGame extends GameGUI implements GameLogic, TimerLogic{
 
-	public HangmanGame() {
-		super();
-		startTimer();
-	}
 	/**
 	 * starts a new timer thread
 	 * @author aabert
@@ -17,6 +13,13 @@ public class HangmanGame extends GameGUI implements GameLogic, TimerLogic{
 		timer.start();
 	}
 
+	//Overridden to add the startTimer call
+	@Override
+	public void startGame() {
+		super.startGame();
+		startTimer();
+	}
+	
 	/**
 	 * Check if the letter has already been guessed (using guessedLetters). If so,
 	 * it prints a hint for the user and exits early. Otherwise, it adds the letter
