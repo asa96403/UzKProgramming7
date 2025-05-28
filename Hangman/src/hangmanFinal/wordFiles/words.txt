@@ -31,7 +31,6 @@ man
 tree
 door
 RAIN
-sHoe
 lamp
 apPle
 plaNE
