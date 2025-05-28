@@ -25,7 +25,6 @@ public class WordFinder extends HangmanGame {
 				}
 			}
 			if (words.isEmpty()) return null;
-			//Überschreiben: bei Buffered Reader append:false: leert file, neu rein schreiben
 		} catch (FileNotFoundException e){
 			System.err.println("The word file was not found");
 			System.err.println(e.getMessage());
@@ -39,6 +38,7 @@ public class WordFinder extends HangmanGame {
 		int index = random.nextInt(words.size());
 		String chosen = words.get(index);
 		allWords.remove(allWords.indexOf(chosen));
+		//Überschreiben: bei Buffered Reader append:false: leert file, neu rein schreiben
 		try(BufferedWriter writer = new BufferedWriter(new FileWriter(file, false))) {
 			for(String line: allWords) {
 				writer.write(line);
