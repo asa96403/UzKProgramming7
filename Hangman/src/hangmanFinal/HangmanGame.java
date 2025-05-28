@@ -15,7 +15,7 @@ public class HangmanGame extends GameGUI implements GameLogic, TimerLogic{
 
 	//Overridden to add the startTimer call
 	@Override
-	public void startGame() {
+	protected void startGame() {
 		super.startGame();
 		startTimer();
 	}
