@@ -12,7 +12,13 @@ import java.util.List;
 import java.util.Random;
 
 public class WordFinder extends HangmanGame {
-	// In class: Create function to process file input
+	/**
+	 * Reads the words.txt file and returns a random word chosen from it that has the specified length. 
+	 * Deletes the chosen word from the file by rewriting it with only the left-over words.
+	 * @param length the length of the word to choose, must be <=10 or no word will be found
+	 * @return the chosen word from the words file with length length
+	 * @author aabert
+	 */
 	public String chooseRandomWordFromFile(int length) {
 		File file = new File(".//src//hangmanFinal/wordFiles/words.txt");
 		ArrayList<String> words = new ArrayList<String>();
